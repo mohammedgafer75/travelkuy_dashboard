@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "16472559049",
+    "project_id": "my-bus-ada23",
+    "storage_bucket": "my-bus-ada23.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:16472559049:android:d98c6f183ab56a84d2ac18",
+        "android_client_info": {
+          "package_name": "com.example.flutter_travelkuy_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "16472559049-jv9c3cg7q5c0l975cr26jn7r8tcrup7e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcnSxzFKRa-xUQGN4s1Dd5iSNXYGvPicI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "16472559049-jv9c3cg7q5c0l975cr26jn7r8tcrup7e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:16472559049:android:c58701561ba4aa2dd2ac18",
+        "android_client_info": {
+          "package_name": "com.example.travelkuy_dashboard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "16472559049-jv9c3cg7q5c0l975cr26jn7r8tcrup7e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcnSxzFKRa-xUQGN4s1Dd5iSNXYGvPicI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "16472559049-jv9c3cg7q5c0l975cr26jn7r8tcrup7e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
