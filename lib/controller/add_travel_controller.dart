@@ -39,6 +39,22 @@ class AddTravelController extends GetxController {
     if (value.isEmpty) {
       return "الرجاء ادخال جميع البيانات";
     }
+    if (value.isNum) {
+      return "  الرجاء عدم ادخال ارقام ";
+    }
+    return null;
+  }
+
+  String? validate(String value) {
+    if (value.isEmpty) {
+      return "الرجاء ادخال جميع البيانات";
+    }
+    if (!value.isNum) {
+      return "  الرجاء ادخال ارقام فقط ";
+    }
+     if (int.tryParse(value)!.isEven) {
+      return "الرجاء ادخال ارقام موجبة";
+    }
     return null;
   }
 
@@ -55,11 +71,13 @@ class AddTravelController extends GetxController {
         await _picker.pickImage(source: ImageSource.gallery);
     if (selectedImage!.path.isNotEmpty) {
       image = selectedImage;
+      ch = 1;
       update(['image']);
     }
   }
 
   late String image_url;
+  int ch = 0;
   Future uploadImageToFirebase() async {
     String fileName = basename(image!.path);
 
@@ -70,9 +88,9 @@ class AddTravelController extends GetxController {
     UploadTask uploadTask = firebaseStorageRef.putFile(_imageFile);
     TaskSnapshot taskSnapshot = await uploadTask.whenComplete(() => null);
 
-    await taskSnapshot.ref.getDownloadURL().then(
-          (value) => image_url = value,
-        );
+    await taskSnapshot.ref.getDownloadURL().then((value) {
+      image_url = value;
+    });
   }
 
   void addTravel() async {

@@ -7,6 +7,8 @@ import 'package:travelkuy_dashboard/widgets/custom_textfield.dart';
 import 'package:intl/intl.dart';
 import 'dart:ui' as ui;
 
+import 'package:travelkuy_dashboard/widgets/snackbar.dart';
+
 class Reservtion extends StatefulWidget {
   const Reservtion({Key? key}) : super(key: key);
 
@@ -83,7 +85,7 @@ Widget form(context) {
                     CustomTextField(
                       controller: logic.no,
                       validator: (value) {
-                        return logic.validateAddress(value!);
+                        return logic.validate(value!);
                       },
                       lable: 'رقم الرحلة',
                       icon: const Icon(Icons.add_location_outlined),
@@ -112,7 +114,7 @@ Widget form(context) {
                     CustomTextField(
                         controller: logic.price,
                         validator: (value) {
-                          return logic.validateAddress(value!);
+                          return logic.validate(value!);
                         },
                         lable: 'السعر',
                         icon: const Icon(Icons.attach_money),
@@ -121,7 +123,7 @@ Widget form(context) {
                     CustomTextField(
                         controller: logic.count,
                         validator: (value) {
-                          return logic.validateAddress(value!);
+                          return logic.validate(value!);
                         },
                         lable: 'عدد المقاعد',
                         icon: const Icon(Icons.numbers),
@@ -191,7 +193,12 @@ Widget form(context) {
                       padding: const EdgeInsets.all(15.0),
                       child: TextButton(
                           onPressed: () async {
-                            logic.addTravel();
+                            if (logic.ch == 0) {
+                              showbar('error', 'subtitle', 'الرجاء اختيار صورة',
+                                  false);
+                            } else {
+                              logic.addTravel();
+                            }
                           },
                           style: ButtonStyle(
                             padding: MaterialStateProperty.all(EdgeInsets.only(
